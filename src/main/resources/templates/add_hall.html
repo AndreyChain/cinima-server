@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Добавление зала</h3>
+<p th:if="${addHall}"> Фильм
+    <span  th:text="${addHall}" style="color:red"></span>
+    добавлен
+</p>
+<form action="#" th:action="@{/hall/add}" th:object="${hall}" method="post">
+    <div>
+        <select name="filmId">
+            <option th:each="film : ${films}"
+                    th:value="${film.id}"
+                    th:utext="${film.name}">
+            </option>
+        </select>
+    </div>
+
+        <label>Номер зала: <input th:field="*{numHall}" type="text"></label>
+    </div>
+    <div>
+        <label>Дата начала: <input th:field="*{dateTime}" type="datetime-local"></label>
+    </div>
+    <div>
+        <label>Стоимость билета: <input th:field="*{priceTicket}" type="text"></label>
+    </div>
+
+    <p><input type="submit" value="Добавить"></p>
+</form>
+
+<p><a href="/admin">На главную</a></p>
+</body>
+</html>

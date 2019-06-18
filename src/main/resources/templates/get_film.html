@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Список фильмов</h2>
+    <div>
+        <th:block th:each="film : ${films}">
+            <div>
+                <h3 th:utext="${film.name}"></h3>
+                <p th:utext="${film.filmDescription}"></p>
+                <a href="/order/${film.id}">Заказать билет!</a>
+                <!--можно добавить ссылку на id фильма, в контроллере получать вильм по id-->
+
+            </div>
+        </th:block>
+    </div>
+<p><a href="/">На главную</a></p>
+
+</body>
+</html>

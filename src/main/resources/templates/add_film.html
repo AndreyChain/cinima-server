@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Добавление фильма</h2>
+
+<p th:if="${addFilm}">Фильм
+    <span  th:text="${addFilm}" style="color:red"></span>
+    добавлен
+</p>
+<form method="post" th:action="@{/film/add}" th:object="${film}">
+    <div>
+        <label>Название фильма: <input th:field="*{name}" type="text"></label>
+    </div>
+    <div>
+        <label>Описание фильма <textarea th:field="*{filmDescription}"> </textarea></label>
+    </div>
+    <p><input type="submit" value="Добавить"></p>
+</form>
+
+<p><a href="/admin">Назад</a></p>
+</body>
+</html>
