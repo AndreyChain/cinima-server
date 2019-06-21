@@ -11,7 +11,7 @@
             <div>
                 <h3 th:utext="${film.name}"></h3>
                 <p th:utext="${film.filmDescription}"></p>
-                <a href="/order/${film.id}">Заказать билет!</a>
+                <a th:href="@{'/order/' + ${film.id}}">Переход к заказу билетов</a>
                 <!--можно добавить ссылку на id фильма, в контроллере получать вильм по id-->
 
             </div>

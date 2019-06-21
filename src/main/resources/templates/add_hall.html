@@ -6,8 +6,8 @@
 </head>
 <body>
 <h3>Добавление зала</h3>
-<p th:if="${addHall}"> Фильм
-    <span  th:text="${addHall}" style="color:red"></span>
+<p th:if="${addHall}"> Сеанс в ЗАЛЕ №
+    <span  th:text="${addHall}" style="color:green"></span>
     добавлен
 </p>
 <form action="#" th:action="@{/hall/add}" th:object="${hall}" method="post">

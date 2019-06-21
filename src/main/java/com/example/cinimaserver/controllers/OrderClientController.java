@@ -24,9 +24,12 @@ public class OrderClientController {
     private HallRepository hallRepository;
 
     @RequestMapping(value = "/order/{id}", method = RequestMethod.GET)
-    public String order(@PathVariable("id") Integer id) {
-        System.out.println("Выбран фильм с id = " +id);
-        return "add_show";
+    public String order(Model model,
+            @PathVariable("id") Integer id) {
+        model.addAttribute("film", filmRepostory.findById(id).get().getName());
+        model.addAttribute("halls", filmRepostory.findById(id).get().getHalls());
+        //model.addAttribute("hallsData",filmRepostory.findById(id).get().getHalls().get(id).getDateTime());
+        return "add_order";
     }
 
 

@@ -34,18 +34,20 @@ public class HallController {
 
         Film film = filmRepostory.findById(Integer.valueOf(filmId)).get();
 
-        updateParticipantRegInfo(hall, film);
+        updateHall(hall, film);
         hallRepository.save(hall);
 
         model.addAttribute("addHall", hall.getNumHall());
-
         model.addAttribute("films", filmRepostory.findAll());
         model.addAttribute("hall", new Hall());
         return "add_hall";
     }
 
-    private void updateParticipantRegInfo(Hall participant, Film film) {
-        participant.getFilms().add(film);
+    private void updateHall(Hall newHall, Film film) {
+
+        newHall.getFilms().add(film);
+
+        film.getHalls().add(newHall);
     }
 }
 

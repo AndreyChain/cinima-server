@@ -27,4 +27,10 @@ public class FilmController {
         return "add_film";
     }
 
+    @RequestMapping(value ="/film/get", method = RequestMethod.GET)
+    public String getFilm(Model model){
+        model.addAttribute("films", filmRepostory.findAll());
+        return "get_film";
+    }
+
 }

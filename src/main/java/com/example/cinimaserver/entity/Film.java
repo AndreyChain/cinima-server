@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table
@@ -69,4 +70,6 @@ public class Film {
     public void setHalls(List<Hall> halls) {
         this.halls = halls;
     }
+
 }
+
