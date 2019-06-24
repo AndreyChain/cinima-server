@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ВОСХОД</title>
+</head>
+<body>
+<div class="container">
+       <form th:action="@{/login}" method="POST" class="form-signin">
+        <h3 class="form-signin-heading" th:text="Welcome"></h3>
+
+        <input type="text" name="login" th:placeholder="Login"
+               class="form-control"/> <br/>
+        <input type="password" th:placeholder="Password"
+               name="password" class="form-control"/> <br/>
+
+        <div align="center" th:if="${param.error}">
+            <p style="font-size: 40; color: #FF1C19;">Login or Password invalid, please verify</p>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Вход" type="Submit"
+                th:text="Вход"></button>
+    </form>
+</div>
+</body>
+</html>

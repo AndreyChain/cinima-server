@@ -16,11 +16,16 @@ public class OrderClient {
 
     private String nameClient;
     private String phoneNum;
+    private int numTicket;
 
     @OneToMany(mappedBy = "order_client",
             cascade = CascadeType.ALL, fetch = FetchType.LAZY,
             orphanRemoval = true)
     private List<Film> films = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "hall_id")
+    private Hall hall;
 
     public int getId() {
         return id;
@@ -46,6 +51,14 @@ public class OrderClient {
         this.phoneNum = phoneNum;
     }
 
+    public int getNumTicket() {
+        return numTicket;
+    }
+
+    public void setNumTicket(int numTicket) {
+        this.numTicket = numTicket;
+    }
+
     public List<Film> getFilms() {
         return films;
     }
@@ -53,4 +66,14 @@ public class OrderClient {
     public void setFilms(List<Film> films) {
         this.films = films;
     }
+
+    public Hall getHall() {
+        return hall;
+    }
+
+    public void setHall(Hall hall) {
+        this.hall = hall;
+    }
 }
+
+

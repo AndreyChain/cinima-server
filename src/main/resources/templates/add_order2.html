@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ВОСХОД</title>
+</head>
+<body>
+<h3>Выполнить заказ</h3>
+
+<div>
+    <label>Название фильма: </label>
+    <h4 th:text="${nameFilm}"></h4>
+    </div>
+<div>
+    <label>Время сеанса: </label>
+    <h5 th:utext="${hall2Id}" ></h5>
+</div>
+<form method="post" th:action="@{/order2/add}" th:object="${order}">
+    <div>
+    <label>Введите ваше имя: <input th:field="*{nameClient}" type="text"> </label>
+    </div>
+    <div>
+    <label>Введите ваш номе телефона: <input th:field="*{phoneNum}" type="text"> </label>
+    </div>
+    <div>
+    <label>Введите количество билетов: <input th:field="*{numTicket}" type="number"> </label>
+    </div>
+    <p><input type="submit" value="Добавить"></p>
+</form>
+</br>
+<div>
+    <a href="/film/get">К ФИЛЬМАМ</a>
+</div>
+</body>
+</html>

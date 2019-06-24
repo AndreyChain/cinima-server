@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ВОСХОД</title>
 </head>
 <body>
 <h3>Добавление зала</h3>
@@ -20,7 +20,7 @@
         </select>
     </div>
 
-        <label>Номер зала: <input th:field="*{numHall}" type="text"></label>
+        <label>Наименование зала: <input th:field="*{numHall}" type="text"></label>
     </div>
     <div>
         <label>Дата начала: <input th:field="*{dateTime}" type="datetime-local"></label>
@@ -29,9 +29,13 @@
         <label>Стоимость билета: <input th:field="*{priceTicket}" type="text"></label>
     </div>
 
+    <div>
+        <label>Количество доступных билетов: <input th:field="*{numTicket}" type="number"></label>
+    </div>
+
     <p><input type="submit" value="Добавить"></p>
 </form>
 
-<p><a href="/admin">На главную</a></p>
+<p><a href="/admin/show">Назад</a></p>
 </body>
 </html>

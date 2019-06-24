@@ -31,9 +31,7 @@ public class HallController {
     @RequestMapping(value = "/hall/add", method = RequestMethod.POST)
     public String submitHall(@ModelAttribute Hall hall, Model model,
                              @RequestParam(name = "filmId") String filmId) {
-
         Film film = filmRepostory.findById(Integer.valueOf(filmId)).get();
-
         updateHall(hall, film);
         hallRepository.save(hall);
 

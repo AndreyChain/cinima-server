@@ -21,9 +21,8 @@ public class Hall {
     private List <Film> films = new ArrayList<>();
 
     private String numHall;
-    /*private String numRange;
-    private String numSeat;*/
     private String priceTicket;
+    private int numTicket;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime dateTime;
@@ -52,24 +51,15 @@ public class Hall {
         this.numHall = numHall;
     }
 
-   /* public String getNumRange() {
-        return numRange;
-    }
-
-    public void setNumRange(String numRange) {
-        this.numRange = numRange;
-    }
-
-    public String getNumSeat() {
-        return numSeat;
-    }
-
-    public void setNumSeat(String numSeat) {
-        this.numSeat = numSeat;
-    }*/
-
     public String getPriceTicket() {
         return priceTicket;
+    }
+
+    public int getNumTicket() {
+        return numTicket;
+    }
+    public void setNumTicket(int numTicket) {
+        this.numTicket = numTicket;
     }
 
     public void setPriceTicket(String priceTicket) {

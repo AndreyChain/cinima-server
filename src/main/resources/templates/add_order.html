@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ВОСХОД</title>
 </head>
-<body>
+<br>
      <h3>Вы заказали фильм</h3>
 <div>
     <h2 th:utext="${film}"></h2>
 </div>
 <div>
-    <label>Выберите время сеанса: </label>
-    <select name="hallId">
-        <option th:each="hall : ${halls}"
-                th:value="${hall.id}"
-                th:utext="${hall.dateTime}">
-        </option>
-    </select>
-</div>
-<div>
-    <p><input type="submit" value="ЗАКАЗАТЬ!">
-        </p>
-</div>
-<div>
-    <a href="film/get">Вернуться к фильмам</a>
-</div>
+    <h4>Выберите сеанс: </h4>
+    </div>
+     <div>
+        <th:block th:each="hall : ${halls}">
+             <div>
+                 <h5 th:utext="${hall.dateTime}"></h5>
+                 <h6 th:utext="${hall.priceTicket}"></h6>
+                 <p th:utext="${hall.numHall}"></p>
+                 <label>Билетов в наличии: <p th:utext="${hall.numTicket}"></p></label>
+                 <a th:href="@{'/order2/' + ${hall.id}}">Хочу!</a>
+                 <!--<p><input type="submit" value="Выбрать"></p>-->
+                 <!--можно добавить ссылку на id фильма, в контроллере получать вильм по id-->
+             </div>
+         </th:block>
+     </div>
+
+
+</br>
+         <div>
+         <a href="/film/get">К ФИЛЬМАМ</a>
+     </div>
 </body>
 </html>

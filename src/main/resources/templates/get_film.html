@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ВОСХОД</title>
 </head>
 <body>
 <h2>Список фильмов</h2>
@@ -11,7 +11,7 @@
             <div>
                 <h3 th:utext="${film.name}"></h3>
                 <p th:utext="${film.filmDescription}"></p>
-                <a th:href="@{'/order/' + ${film.id}}">Переход к заказу билетов</a>
+                <a th:href="@{'/order/' + ${film.id}}">Переход к выбору сеанса</a>
                 <!--можно добавить ссылку на id фильма, в контроллере получать вильм по id-->
 
             </div>

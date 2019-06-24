@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ВОСХОД</title>
+</head>
+<body>
+<div>
+<h2 th:if="${noTicket}">НЕДОСТАТОЧНО БИЛЕТОВ!!!
+    Осталось:
+    <span th:text="${noTicket}" style="color:red"></span>
+</h2>
+</div>
+<div>
+    <label>Спасибо за покупку:</label>
+    <h4 th:text="${nameClient}"></h4>
+
+    <p th:if="${addOrder}"> Вы забронировали
+        <span  th:text="${addOrder}" style="color:red"></span>
+        билета(ов)
+
+    <p th:if="${addFilm}"></p> На фильм:
+    <span th:text="${addFilm}" style="color:orange"></span>
+
+    <p th:if="${addHall}"></p> Стоимость билета:
+    <span th:text="${addHall}" style="color:blu"></span>
+</div>
+</body>
+</br>
+<div>
+    <a href="/film/get">К ФИЛЬМАМ</a>
+</div>
+</html>

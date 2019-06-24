@@ -18,11 +18,9 @@ public class Film {
     private String name;
     private String filmDescription;
 
-
    @ManyToOne
-   @JoinColumn
+   @JoinColumn(name = "order_id")
    private OrderClient order_client;
-
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "film_hall",
