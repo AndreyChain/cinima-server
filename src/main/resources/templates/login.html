@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="container">
-       <form th:action="@{/login}" method="POST" class="form-signin">
+          <form th:action="@{/login}" method="POST" class="form-signin">
         <h3 class="form-signin-heading" th:text="Welcome"></h3>
 
         <input type="text" name="login" th:placeholder="Login"
@@ -17,8 +17,8 @@
         <div align="center" th:if="${param.error}">
             <p style="font-size: 40; color: #FF1C19;">Login or Password invalid, please verify</p>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Вход" type="Submit"
-                th:text="Вход"></button>
+        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Enter" type="Submit"
+                th:text="Enter"></button>
     </form>
 </div>
 </body>
